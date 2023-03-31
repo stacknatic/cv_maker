@@ -116,3 +116,11 @@ button{
 .b, .d{
     width: 400px;
 }
+.skills{
+    position: relative;
+}
+ul li{
+    position: absolute;
+    left: 0;
+    display: none;
+}

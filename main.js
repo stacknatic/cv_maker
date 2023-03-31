@@ -4,6 +4,8 @@ const cvWindow = document.querySelector('.section2')
 const printButton = document.querySelector('button')
 const style = document.querySelector('style')
 
+const skillsUl = document.querySelector('.skills-ul')
+
 const cvContent = () => {
     telephoneOutput.innerText = telephoneInput.value
 }
@@ -21,6 +23,14 @@ const printCv = () => {
     cvTemplate.print()
     
 }
+
+const addSkill = () => {
+    const skillsLi = document.createElement('li')
+    skillsLi.innerText = 'testing skill'
+    skillsUl.appendChild(skillsLi)
+
+}
+addSkill()
 
 
 telephoneInput.addEventListener('input', cvContent)

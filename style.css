@@ -105,8 +105,7 @@ button{
 }
 .contact-info, .overview{
     font-size: small;
-    /* width: 325px; */
-    word-wrap: break-word ;
+    word-wrap: break-word;
 }
 
 .a, .c, .e, .f{

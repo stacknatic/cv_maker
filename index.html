@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
     <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
-        *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-@page{
-    size: auto;
-    margin: 0;
-}
-* {
+        @import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: auto;
+            margin: 0;
+
+        }
+
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -29,243 +36,335 @@
 
 
 
-header{
-    background-color: #1f1f1f;
-    position: sticky;
-    top: 0;
-}
-body{
-    margin: 1rem;
-    font-family: sans-serif;
-}
-main{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-form{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-form input, form label{
-    margin: 0.5rem 0; 
-}
-.overview-input{
-    display: block;
-    
-}
-.section1{
-    flex-basis: 30%;
-    border: 1px solid gray;
-    border-radius: 2px;
-    padding: 0.5rem;
+        header {
+            background-color: #1f1f1f;
+            position: sticky;
+            top: 0;
+        }
+
+        body {
+            margin: 1rem;
+            font-family: sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        form input,
+        form label {
+            margin: 0.5rem 0;
+        }
+
+        .overview-input {
+            display: block;
+
+        }
+
+        .section1 {
+            flex-basis: 30%;
+            border: 1px solid gray;
+            border-radius: 2px;
+            padding: 0.5rem;
 
 
-}
-.section2{
-    flex-basis: 65%;
-    /* border: 1px solid gray;
-    border-radius: 2px;
-    padding: 0.5rem;
-    background-color: black; */
-}
-.section2-inner{
-    background-color: red;
-     /* flex-shrink: 0; */
-     border: 1px solid gray;
-    border-radius: 2px;
-    padding: 0.5rem;
-    /* background-color: black; */
-    /* position: relative; */
-    background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
-}
-h2{
-    text-align: center;
-    margin: 1rem;
-    color: white;
-}
-.cv-container{
-    display: grid;
-    grid-template-areas:
-    /* 'a b b'
-    'c d d'
-    'e d d'
-    'f d d'; */
-    'b b a'
-    'd d c'
-    'd d e'
-    'd d f';
-    gap: 1rem;
+        }
+
+        .section2 {
+            flex-basis: 68%;
+        }
+
+        .section2-inner {
+            background-color: red;
+            /* flex-shrink: 0; */
+            border: 1px solid gray;
+            border-radius: 2px;
+            padding: 0.5rem;
+            /* background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%); */
+            height: 1118px;
+            background-color: #1f1f1f;
 
 
-}
+        }
+
+        h2 {
+            text-align: center;
+            margin: 1rem;
+            color: white;
+        }
+
+        .cv-container {
+            position: relative;
+            display: grid;
+            grid-template-areas:
+                'b b a'
+                'd d c'
+                'd d e'
+                'd d f';
+            gap: 0.3rem;
 
 
-.a {
-    grid-area: a;
-   
-}
-.b {
-    grid-area: b;
- 
-}
-
-.c {
-    grid-area: c;
-   
-}
-
-.d{
-    grid-area: d;
-   
-}
-.e{
-    grid-area: e;
-}
-.f{
-    grid-area: f;
-}
-
-.column{
-    box-shadow: 0px 2px 5px 0px;
-    border-radius: 4px;
-}
+        }
 
 
+        .a {
+            grid-area: a;
+
+        }
+
+        .b {
+            grid-area: b;
+
+        }
+
+        .c {
+            grid-area: c;
+
+        }
+
+        .d {
+            grid-area: d;
+
+        }
+
+        .e {
+            grid-area: e;
+        }
+
+        .f {
+            grid-area: f;
+        }
+
+        .column {
+            box-shadow: 0px 2px 5px 0px;
+            border-radius: 4px;
+        }
+
+        .print {
+            margin: 1rem 0;
+        }
+
+        button {
+            border-radius: 5pc;
+            padding: 0.4rem;
+        }
+
+        .column {
+            font-size: small;
+            /* width: 325px; */
+            word-wrap: break-word;
+            line-height: 1.3rem;
+            border: 1px solid #f7f5f5;
+            background-color: #f7f5f5;
+            padding: 0.5rem;
+        }
+
+        .a,
+        .c,
+        .e,
+        .f {
+            min-width: 350px;
+        }
+
+        .b,
+        .d {
+            min-width: 400px;
+        }
+
+        li {
+            margin: 0.5rem 1rem;
+
+        }
+
+        .overview-title {
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+
+            .section2 {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            body{
+                margin: 0.15rem;
+            }
+        }
+
+        .profile-pic {
+            width: 80px;
+            float: left;
+            padding: 0.4rem;
+            border-radius: 10px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+
+            translate: 0 25%;
+
+        }
 
 
-.print{
-    margin: 1rem 0;
-}
-button{
-    border-radius: 5pc;
-    padding: 0.4rem;
-}
-.column{
-    font-size: small;
-    /* width: 325px; */
-    word-wrap: break-word ;
-    line-height: 1.3rem;
-    border: 1px solid #f7f5f5;
-    background-color: #f7f5f5;
-    padding: 0.5rem;
-}
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            position: relative;
+        }
 
-.a, .c, .e, .f{
-    min-width: 260px;
-}
+        .email-icon {
+            width: 20px;
+        }
 
-.b, .d{
-    min-width: 400px;
-}
+        .dash {
+            width: 4rem;
+            background-color: white;
+            height: 0.1rem;
+        }
 
-li{
-    margin: 0.5rem 1rem;
-  
-}
-.overview-title{
-    text-align: center;
-}
-h3{
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-@media print {
-           
-           .section2 {
-               print-color-adjust: exact;
-               -webkit-print-color-adjust: exact;
-               padding: 1rem;
-
-           }
-       }
+        .cv-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .profession{
+            font-family: 'Monofett', cursive;
+            letter-spacing: 0.2rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .education-title, .courses-title{
+            margin-top: 1rem;
+        }
+       
     </style>
 </head>
+
 <body>
-  
+
     <h1>CV Maker</h1>
     <main>
         <section class="section1">
             <form action="">
                 <label for="fullname">Full name</label>
-                <input type="text" id="fullname">
+                <input type="text" id="fullname" maxlength="30">
                 <label for="tel">Telephone number</label>
                 <input type="number" id="tel">
                 <label for="email">Email address</label>
-                <input type="number" id="email">
+                <input type="email" id="email">
                 <label for="location">Location</label>
-                <input type="number" id="location">
+                <input type="text" id="location">
                 <label for="overview">Overview</label>
                 <textarea name="overview" id="overview" cols="30" rows="10"></textarea>
-                
+
             </form>
         </section>
         <section class="section2">
             <div class="section2-inner">
+                <div class="cv-header">
+                    <h2>John Smith</h2>
+                    <span>
+                        <div class="dash"></div>
 
-                <h2>John Smith</h2>
+                    </span>
+                    <h2 class="profession">
+                        Full Stack Developer
+                    </h2>
+
+                </div>
+
                 <div class="cv-container">
                     <div class="a column contact-info">
-                        <p>Tel: <span class="telephone"></span></p>
-                        <p>Email: <span class="email"></span></p>
-                        <p>Location: <span class="location"></span></p>
-                        <p>GitHub: <span class="github-url"></span></p>
+                        <h3>CONTACT</h3>
+                        <p><img class="icon" src="/icons/tel.svg" alt="phone icon"> Tel: <span class="telephone"></span>
+                        </p>
+                        <p><img class="icon email-icon" src="/icons/email.svg" alt="email"> Email: <span
+                                class="email"></span></p>
+                        <p><img class="icon location-icon" src="/icons/location.svg" alt="phone icon"> Location: <span
+                                class="location"></span></p>
+                        <p><img class="icon url-icon" src="/icons/url.svg" alt="url icon"> Url: <span
+                                class="location"></span></p>
+                        <p> GitHub: <span class="github-url"></span></p>
                         <p>LinkedIn: <span class="linkedin-url">https://linkedin.com/michaelakerele/</span></p>
-                        <p>Url: <span class="location"></span></p>
-                        
-                        
+
+
                     </div>
                     <div class="b column overview">
-                        <h3 class="overview-title">Overview</h3>
+                        <h3 class="overview-title"><p><img class="icon overview-icon" src="/icons/magnifiying.svg" alt="CV overview"> OVERVIEW</h3>
+                        <img class="profile-pic" src="Michael.jpg" alt="profile pic">
                         <p class="overview-text">
-                            I am a full stack web developer based in Helsinki. I started coding as a hobby which I eventually embraced as a vocation. Stacknatic, is a platform that I created as a medium for writing about web development topics. In case you are wondering what stacknatic means, it is a word that I coined from two words ('stack' 'fanatic').</p>
-                        </div>
-                        <!-- <div class="b column profile">b</div> -->
-                        <div class="c column skills">
-                            <h3>Skills</h3>
-                            <ul class="skills-ul">
-                                
-                                
-                            </ul>
-                        </div>
-                        <div class="d column experience">
-                            <h3 class="experience-title">Experience</h3>
-                            <p class="experience-text"></p>
-                            <h3 class="education-title">Education</h3>
-                            <ul class="education-ul">
-                                
-                            </ul>
-                            <h3 class="certificates-title">Certificates</h3>
-                            <ul class="certificates-ul">
-                                
-                            </ul>
-                        </div>
-                        
-                        <div class="e column career">
-                            <h3 class="career-title">Career Objectives</h3>
-                            <ul class="career-ul">
-                            </div>
-                            
-                            <div class="f column hobbies-title">
-                                <h3>Hobbies</h3>
-                            </div>
-                            
-                            
-                            
-                            
-                            
-                            
-                        </div>
-                        
+                           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis nemo quis eos delectus earum reiciendis fuga quisquam, eaque, soluta, pariatur omnis labore voluptate porro et! Doloribus in magnam itaque. Quis, numquam qui magnam voluptates culpa ipsam quasi consequatur expedita illum assumenda distinctio, sapiente laboriosam exercitationem eos delectus consectetur temporibus deleniti?</p>
                     </div>
-                    </section>
+                    <!-- <div class="b column profile">b</div> -->
+                    <div class="c column skills">
+                        <h3>SKILLS</h3>
+                        <ul class="skills-ul">
+
+
+                        </ul>
+                    </div>
+                    <div class="d column experience">
+                        <h3 class="experience-title">EXPERIENCE</h3>
+                        <p class="experience-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi
+                            saepe est hic, illum adipisci odio nihil natus debitis laborum. Iure aliquam veniam
+                            perspiciatis placeat sequi totam? Sed nam esse odio incidunt, labore voluptate molestiae
+                            inventore officia quas quibusdam corrupti saepe illum sunt pariatur nesciunt voluptatem qui,
+                            quaerat vero commodi fuga!</p>
+                        <h3 class="education-title">EDUCATION</h3>
+                        <ul class="education-ul">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolore
+                            ipsam illo ex vel magni impedit praesentium sequi ipsa vitae ea ducimus, earum nam odit.
+                            Excepturi autem, iusto animi ex incidunt assumenda minus facere libero accusamus velit.
+                            Velit culpa asperiores repellendus, fugit dolorem deserunt dolore qui labore ipsam animi
+                            soluta!
+
+                        </ul>
+                        <h3 class="courses-title">COURSES</h3>
+                        <ul class="courses-ul">
+
+                        </ul>
+                    </div>
+
+                    <div class="e column career">
+                        <h3 class="career-title">CAREER OBJECTIVES</h3>
+                        <ul class="career-ul">
+                    </div>
+
+                    <div class="f column hobbies-title">
+                        <h3>INTERESTS</h3>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+            </div>
+        </section>
     </main>
     <div class="print">
         <button>Print CV</button>
     </div>
     <script src="main.js"></script>
 </body>
+
 </html>

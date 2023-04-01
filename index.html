@@ -16,6 +16,19 @@
     size: auto;
     margin: 0;
 }
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            /* Chrome, Safari 6 – 15.3, Edge */
+
+            print-color-adjust: exact !important;
+            /* Firefox 97+, Safari 15.4+ */
+        }
+
+
+
 header{
     background-color: #1f1f1f;
     position: sticky;
@@ -53,24 +66,38 @@ form input, form label{
 }
 .section2{
     flex-basis: 65%;
-    flex-shrink: 0;
-    border: 1px solid gray;
+    /* border: 1px solid gray;
     border-radius: 2px;
     padding: 0.5rem;
-    position: relative;
-
+    background-color: black; */
+}
+.section2-inner{
+    background-color: red;
+     /* flex-shrink: 0; */
+     border: 1px solid gray;
+    border-radius: 2px;
+    padding: 0.5rem;
+    /* background-color: black; */
+    /* position: relative; */
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
 }
 h2{
     text-align: center;
+    margin: 1rem;
+    color: white;
 }
 .cv-container{
     display: grid;
-
     grid-template-areas:
-    'a b b'
+    /* 'a b b'
     'c d d'
     'e d d'
-    'f d d';
+    'f d d'; */
+    'b b a'
+    'd d c'
+    'd d e'
+    'd d f';
     gap: 1rem;
 
 
@@ -83,14 +110,17 @@ h2{
 }
 .b {
     grid-area: b;
+ 
 }
 
 .c {
     grid-area: c;
+   
 }
 
 .d{
     grid-area: d;
+   
 }
 .e{
     grid-area: e;
@@ -99,12 +129,14 @@ h2{
     grid-area: f;
 }
 
-
-
 .column{
-    border: 1px solid gray;
-    padding: 0.5rem;
+    box-shadow: 0px 2px 5px 0px;
+    border-radius: 4px;
 }
+
+
+
+
 .print{
     margin: 1rem 0;
 }
@@ -112,10 +144,14 @@ button{
     border-radius: 5pc;
     padding: 0.4rem;
 }
-.contact-info, .overview{
+.column{
     font-size: small;
     /* width: 325px; */
     word-wrap: break-word ;
+    line-height: 1.3rem;
+    border: 1px solid #f7f5f5;
+    background-color: #f7f5f5;
+    padding: 0.5rem;
 }
 
 .a, .c, .e, .f{
@@ -130,6 +166,22 @@ li{
     margin: 0.5rem 1rem;
   
 }
+.overview-title{
+    text-align: center;
+}
+h3{
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+@media print {
+           
+           .section2 {
+               print-color-adjust: exact;
+               -webkit-print-color-adjust: exact;
+               padding: 1rem;
+
+           }
+       }
     </style>
 </head>
 <body>
@@ -152,41 +204,64 @@ li{
             </form>
         </section>
         <section class="section2">
-            <h2>John Smith</h2>
-            <div class="cv-container">
-                <div class="a column contact-info">
-                    <p>Tel: <span class="telephone"></span></p>
-                    <p>Email: <span class="email"></span></p>
-                    <p>Location: <span class="location"></span></p>
-                    <p>Url: <span class="location"></span></p>
+            <div class="section2-inner">
 
-                </div>
-                <div class="b column overview">
-                    <h3>Profile</h3>
-                </div>
-                <!-- <div class="b column profile">b</div> -->
-                <div class="c column skills">
-                    <h3>Skills</h3>
-                    <ul class="skills-ul">
+                <h2>John Smith</h2>
+                <div class="cv-container">
+                    <div class="a column contact-info">
+                        <p>Tel: <span class="telephone"></span></p>
+                        <p>Email: <span class="email"></span></p>
+                        <p>Location: <span class="location"></span></p>
+                        <p>GitHub: <span class="github-url"></span></p>
+                        <p>LinkedIn: <span class="linkedin-url">https://linkedin.com/michaelakerele/</span></p>
+                        <p>Url: <span class="location"></span></p>
                         
                         
-                    </ul>
-                </div>
-                <div class="d column experience"></div>
-                <!-- <div class="d column">d</div> -->
-                <div class="e column education"></div>
-                <div class="d column"></div>
-                <!-- <div class="d column">d</div> -->
-                <div class="f column career-objectives"></div>
-
-
-
-
-
-
-            </div>
-
-        </section>
+                    </div>
+                    <div class="b column overview">
+                        <h3 class="overview-title">Overview</h3>
+                        <p class="overview-text">
+                            I am a full stack web developer based in Helsinki. I started coding as a hobby which I eventually embraced as a vocation. Stacknatic, is a platform that I created as a medium for writing about web development topics. In case you are wondering what stacknatic means, it is a word that I coined from two words ('stack' 'fanatic').</p>
+                        </div>
+                        <!-- <div class="b column profile">b</div> -->
+                        <div class="c column skills">
+                            <h3>Skills</h3>
+                            <ul class="skills-ul">
+                                
+                                
+                            </ul>
+                        </div>
+                        <div class="d column experience">
+                            <h3 class="experience-title">Experience</h3>
+                            <p class="experience-text"></p>
+                            <h3 class="education-title">Education</h3>
+                            <ul class="education-ul">
+                                
+                            </ul>
+                            <h3 class="certificates-title">Certificates</h3>
+                            <ul class="certificates-ul">
+                                
+                            </ul>
+                        </div>
+                        
+                        <div class="e column career">
+                            <h3 class="career-title">Career Objectives</h3>
+                            <ul class="career-ul">
+                            </div>
+                            
+                            <div class="f column hobbies-title">
+                                <h3>Hobbies</h3>
+                            </div>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    </section>
     </main>
     <div class="print">
         <button>Print CV</button>

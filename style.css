@@ -58,10 +58,10 @@ h2{
     display: grid;
 
     grid-template-areas:
-    'a b b'
-    'c d d'
-    'e d d'
-    'f d d';
+    'b b a'
+    'd d c'
+    'd d e'
+    'd d f';
     gap: 1rem;
 
 

@@ -27,7 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-print-color-adjust: exact !important;
+            /* -webkit-print-color-adjust: exact !important; */
             /* Chrome, Safari 6 – 15.3, Edge */
 
             print-color-adjust: exact !important;
@@ -75,6 +75,9 @@
             border: 1px solid gray;
             border-radius: 2px;
             padding: 0.5rem;
+             background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+            color: #fff;
 
 
         }
@@ -167,6 +170,7 @@
             border: 1px solid #f7f5f5;
             background-color: #f7f5f5;
             padding: 0.5rem;
+            overflow-wrap: break-word;
         }
 
         .a,
@@ -179,6 +183,7 @@
         .b,
         .d {
             min-width: 400px;
+            flex-grow: 0;
         }
 
         li {
@@ -249,11 +254,40 @@
             font-family: 'Monofett', cursive;
             letter-spacing: 0.2rem;
             font-weight: bold;
-            font-size: 2rem;
+            font-size: 3rem;
         }
         .education-title, .courses-title{
             margin-top: 1rem;
         }
+        input{
+            border-radius: 3px;
+            line-height: 1.5rem;
+            padding: 0.2rem;
+            font-family: inherit;
+        }
+        textarea{
+            border-radius: 3px;
+            font-family: inherit;
+        }
+        .reset{
+            background-color: darkred;
+            margin: 1rem;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        #print-cv{
+            background-color: green;
+            color: #fff;
+            font-weight: bold;
+            margin: auto;
+            display: block;
+            font-size: 1.1rem;
+        }
+        .website-output-label{
+            margin-bottom: 1rem;
+        }
+      
        
     </style>
 </head>
@@ -265,22 +299,38 @@
         <section class="section1">
             <form action="">
                 <label for="fullname">Full name</label>
-                <input type="text" id="fullname" maxlength="30">
+                <input type="text" id="fullname" maxlength="50">
+                <label for="profession">Profession</label>
+                <input type="text" id="profession" maxlength="60">
                 <label for="tel">Telephone number</label>
                 <input type="number" id="tel">
                 <label for="email">Email address</label>
                 <input type="email" id="email">
                 <label for="location">Location</label>
                 <input type="text" id="location">
+                <!-- <label for="url">Url</label>
+                <select name="url" id="url">
+                    <option value="github">Github</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="personal-url">Url (personal)</option>
+                </select> -->
+                <label for="github">GitHub url</label>
+                <input type="text" id="github" maxlength="100">
+                <label for="linkedin">LinkedIn url</label>
+                <input type="text" id="linkedin" maxlength="100">
+                <label for="website">Website</label>
+                <input type="text" id="website" maxlength="100">
+
                 <label for="overview">Overview</label>
                 <textarea name="overview" id="overview" cols="30" rows="10"></textarea>
+                <button class="reset" type="reset">Reset</button>
 
             </form>
         </section>
         <section class="section2">
             <div class="section2-inner">
                 <div class="cv-header">
-                    <h2>John Smith</h2>
+                    <h2 class="fullname-output">John Smith</h2>
                     <span>
                         <div class="dash"></div>
 
@@ -297,13 +347,13 @@
                         <p><img class="icon" src="/icons/tel.svg" alt="phone icon"> Tel: <span class="telephone"></span>
                         </p>
                         <p><img class="icon email-icon" src="/icons/email.svg" alt="email"> Email: <span
-                                class="email"></span></p>
+                                class="email-output"></span></p>
                         <p><img class="icon location-icon" src="/icons/location.svg" alt="phone icon"> Location: <span
-                                class="location"></span></p>
-                        <p><img class="icon url-icon" src="/icons/url.svg" alt="url icon"> Url: <span
-                                class="location"></span></p>
-                        <p> GitHub: <span class="github-url"></span></p>
-                        <p>LinkedIn: <span class="linkedin-url">https://linkedin.com/michaelakerele/</span></p>
+                                class="location-output">Oz</span></p>
+                        <p class="website-output-label"><img class="icon url-icon" src="/icons/url.svg" alt="url icon"> Website: <span
+                                class="website-output"></span></p>
+                        <p> GitHub: <span class="github-output"></span></p>
+                        <p>LinkedIn: <span class="linkedin-output">https://linkedin.com/michaelakerele/</span></p>
 
 
                     </div>
@@ -362,7 +412,7 @@
         </section>
     </main>
     <div class="print">
-        <button>Print CV</button>
+        <button id="print-cv">Print CV</button>
     </div>
     <script src="main.js"></script>
 </body>

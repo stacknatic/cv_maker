@@ -9,6 +9,7 @@ const githubInput = document.querySelector('#github')
 const linkedinInput = document.querySelector('#linkedin');
 const websiteInput = document.querySelector('#website');
 const overviewInput = document.querySelector('#overview')
+const skillInput = document.querySelector('#skill')
 
 
 
@@ -22,6 +23,9 @@ const githubOutput = document.querySelector('.github-output');
 const linkedinOutput = document.querySelector('.linkedin-output');
 const websiteOutput = document.querySelector('.website-output');
 const overviewOutput = document.querySelector('.overview-text');
+
+// button 
+const skillBtn = document.querySelector('#add-skill')
 
 
 const cvWindow = document.querySelector('.section2')
@@ -59,13 +63,16 @@ const printCv = () => {
     
 }
 
-const addSkill = () => {
+const skillset = (skill) => {
     const skillsLi = document.createElement('li')
-    skillsLi.innerText = 'testing skill'
+    skillsLi.innerText = skill
     skillsUl.appendChild(skillsLi)
-
+}
+const addSkill = () => {
+    skillset(skillInput.value)
 }
 addSkill()
+
 
 
 nameInput.addEventListener('input', cvContent);
@@ -79,3 +86,4 @@ websiteInput.addEventListener('input', cvContent);
 overviewInput.addEventListener('input', cvContent);
 
 printButton.addEventListener('click', printCv);
+skillBtn.addEventListener('click', addSkill)

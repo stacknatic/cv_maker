@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> -->
-
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Monofett&display=swap');
+
         * {
             padding: 0;
             margin: 0;
@@ -53,12 +52,14 @@
             gap: 1rem;
         }
 
-        form {
+        form fieldset {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             flex-direction: column;
+            padding: 0.5rem;
         }
+
 
         form input,
         form label {
@@ -75,8 +76,7 @@
             border: 1px solid gray;
             border-radius: 2px;
             padding: 0.5rem;
-             background: rgb(2, 0, 36);
-            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+            background: #1f1f1f;
             color: #fff;
 
 
@@ -96,6 +96,7 @@
 
 
         }
+      
 
         h2 {
             text-align: center;
@@ -104,6 +105,7 @@
         }
 
         .cv-container {
+            height: 975px;
             position: relative;
             display: grid;
             grid-template-areas:
@@ -144,10 +146,10 @@
             grid-area: f;
         }
 
-        .column {
+        /* .column {
             box-shadow: 0px 2px 5px 0px;
             border-radius: 4px;
-        }
+        } */
 
         .print {
             margin: 1rem 0;
@@ -161,27 +163,31 @@
         .column {
             font-size: small;
             word-wrap: break-word;
-            line-height: 1.3rem;
+            line-height: 1.5rem;
             border: 1px solid #f7f5f5;
             background-color: #f7f5f5;
             padding: 0.5rem;
             overflow-wrap: break-word;
+            box-shadow: 0px 2px 5px 0px;
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         .a,
         .c,
         .e,
         .f {
-            min-width: 350px;
+            min-width: 320px;
+            /* max-width: calc(100vw - 250px); */
+            overflow: hidden;
         }
 
         .b,
         .d {
             min-width: 400px;
-            flex-grow: 0;
         }
 
-        li {
+        ul li {
             margin: 0.5rem 1rem;
 
         }
@@ -201,7 +207,12 @@
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
-            body{
+            .section2-inner {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body {
                 margin: 0.15rem;
             }
         }
@@ -220,32 +231,29 @@
             translate: 0 25%;
 
         }
-        .b{
-            height: 15.6rem;
-            max-height: 15.6rem;
+
+        .b {
+            /* min-height: 15.6rem;
+            max-height: 15.6rem; */
+            /* height: 15.6rem; */
+            height: 240px;
+            /* height: auto; */
+
         }
-        .d{
-            height: 43.5rem;
-            max-height: 43.5rem;
+
+        .d {
+            /* max-height: 43.5rem; */
+            /* height: auto; */
+            height: 731px;
         }
-        .c{
-            height: 20.924rem;
-        }
-        .e{
-            height: 14rem;
-        }
-        .f{
-            height: 8rem;
-        }
-      
 
         .contact-info {
             display: flex;
             justify-content: space-between;
             flex-direction: column;
             position: relative;
-            height: 250px;
-            max-height: 250px;
+            height: 240px;
+            max-width: 320px;
         }
 
         .email-icon {
@@ -263,34 +271,55 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            height: 125px;
         }
-        .profession{
+
+        .profession {
             font-family: 'Monofett', cursive;
             letter-spacing: 0.2rem;
             font-weight: bold;
             font-size: 3rem;
         }
-        .education-title, .courses-title{
+
+        .skills {
+            height: 400px;
+            position: absolute;
+        }
+
+        .career {
+            height: 191px;
+        }
+
+        .interests {
+            height: 130px;
+        }
+
+        .education-title,
+        .courses-title {
             margin-top: 1rem;
         }
-        input{
+
+        input {
             border-radius: 3px;
             line-height: 1.5rem;
             padding: 0.2rem;
             font-family: inherit;
         }
-        textarea{
+
+        textarea {
             border-radius: 3px;
             font-family: inherit;
         }
-        .reset{
+
+        .reset {
             background-color: darkred;
             margin: 1rem;
             color: #fff;
             font-weight: bold;
             font-size: 1.1rem;
         }
-        #print-cv{
+
+        #print-cv {
             background-color: green;
             color: #fff;
             font-weight: bold;
@@ -298,11 +327,24 @@
             display: block;
             font-size: 1.1rem;
         }
-        .website-output-label{
+
+        .website-output-label {
             margin-bottom: 1rem;
         }
-      
-       
+
+        #add-skill {
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: green;
+            color: #fff;
+        }
+
+        #reset-cv {
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: darkred;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -312,48 +354,49 @@
     <main>
         <section class="section1">
             <form action="">
-                <label for="fullname">Full name</label>
-                <input type="text" id="fullname" maxlength="50">
-                <label for="profession">Profession</label>
-                <input type="text" id="profession" maxlength="60">
-                <label for="tel">Telephone number</label>
-                <input type="number" id="tel">
-                <label for="email">Email address</label>
-                <input type="email" id="email">
-                <label for="location">Location</label>
-                <input type="text" id="location">
-                <!-- <label for="url">Url</label>
-                <select name="url" id="url">
-                    <option value="github">Github</option>
-                    <option value="linkedin">LinkedIn</option>
-                    <option value="personal-url">Url (personal)</option>
-                </select> -->
-                <label for="github">GitHub url</label>
-                <input type="text" id="github" maxlength="100">
-                <label for="linkedin">LinkedIn url</label>
-                <input type="text" id="linkedin" maxlength="100">
-                <label for="website">Website</label>
-                <input type="text" id="website" maxlength="100">
+                <fieldset>
+                    <legend>Build your CV</legend>
 
-                <label for="overview">Overview</label>
-                <textarea name="overview" id="overview" cols="30" rows="10"></textarea>
-                <label for="skill">Skill</label>
-                <input type="text" id="skill">
-                <button class="reset" type="reset">Reset</button>
-                
+                    <label for="fullname">Full name</label>
+                    <input type="text" id="fullname" maxlength="50">
+                    <label for="profession">Profession</label>
+                    <input type="text" id="profession" maxlength="60">
+                    <label for="photo">Upload your photo</label>
+                    <input type="file" id="photo" accept="image/png, image/jpeg">
+                    <label for="tel">Telephone number</label maxlength="16">
+                    <input type="number" id="tel">
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" maxlength="31">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" maxlength="31">
+                    <label for="github">GitHub url</label>
+                    <input type="text" id="github" maxlength="35">
+                    <label for="linkedin">LinkedIn url</label>
+                    <input type="text" id="linkedin" maxlength="35">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" maxlength="35">
+
+                    <label for="overview">Overview</label>
+                    <textarea name="overview" id="overview" cols="30" rows="10" maxlength="356"></textarea>
+                    <label for="skill">Skill</label>
+                    <input type="text" id="skill">
+                    <button id="add-skill">Add skill</button>
+                    <button class="reset" type="reset">Reset form</button>
+                    <button id="reset-cv">Clear CV</button>
+
+                </fieldset>
             </form>
-            <button id="add-skill">Add skill</button>
         </section>
         <section class="section2">
             <div class="section2-inner">
                 <div class="cv-header">
-                    <h2 class="fullname-output">John Smith</h2>
+                    <h2 class="fullname-output">Your Name</h2>
                     <span>
                         <div class="dash"></div>
 
                     </span>
                     <h2 class="profession">
-                        Full Stack Developer
+                        Your Profession
                     </h2>
 
                 </div>
@@ -367,18 +410,20 @@
                                 class="email-output"></span></p>
                         <p><img class="icon location-icon" src="/icons/location.svg" alt="phone icon"> Location: <span
                                 class="location-output">Oz</span></p>
-                        <p class="website-output-label"><img class="icon url-icon" src="/icons/url.svg" alt="url icon"> Website: <span
-                                class="website-output"></span></p>
+                        <p class="website-output-label"><img class="icon url-icon" src="/icons/url.svg" alt="url icon">
+                            Website: <span class="website-output"></span></p>
                         <p> GitHub: <span class="github-output"></span></p>
                         <p>LinkedIn: <span class="linkedin-output">https://linkedin.com/michaelakerele/</span></p>
 
 
                     </div>
                     <div class="b column overview">
-                        <h3 class="overview-title"><p><img class="icon overview-icon" src="/icons/magnifiying.svg" alt="CV overview"> OVERVIEW</h3>
+                        <h3 class="overview-title">
+                            <p><img class="icon overview-icon" src="/icons/magnifiying.svg" alt="CV overview"> OVERVIEW
+                        </h3>
                         <img class="profile-pic" src="Michael.jpg" alt="profile pic">
                         <p class="overview-text">
-                           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis nemo quis eos delectus earum reiciendis fuga quisquam, eaque, soluta, pariatur omnis labore voluptate porro et! Doloribus in magnam itaque. Quis, numquam qui magnam voluptates culpa ipsam quasi consequatur expedita illum assumenda distinctio, sapiente laboriosam exercitationem eos delectus consectetur temporibus deleniti?</p>
+                        </p>
                     </div>
                     <!-- <div class="b column profile">b</div> -->
                     <div class="c column skills">
@@ -415,7 +460,7 @@
                         </ul>
                     </div>
 
-                    <div class="f column hobbies-title">
+                    <div class="f column interests">
                         <h3>INTERESTS</h3>
                     </div>
 

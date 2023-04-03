@@ -11,8 +11,6 @@ const websiteInput = document.querySelector('#website');
 const overviewInput = document.querySelector('#overview')
 const skillInput = document.querySelector('#skill')
 
-
-
 //output
 const nameOutput = document.querySelector('.fullname-output');
 const professionOutput = document.querySelector('.profession');
@@ -26,6 +24,7 @@ const overviewOutput = document.querySelector('.overview-text');
 
 // button 
 const skillBtn = document.querySelector('#add-skill')
+const resetCv = document.querySelector('#reset-cv')
 
 
 const cvWindow = document.querySelector('.section2')
@@ -37,6 +36,12 @@ const skillsUl = document.querySelector('.skills-ul')
 const cvContent = () => {
     nameOutput.innerText = nameInput.value;
     professionOutput.innerText = professionInput.value;
+    if(telephoneInput.value.length > 16){
+        alert('Telephone number should not be more than 16 digits.');
+        
+    }
+    telephoneInput.value = telephoneInput.value.slice(0,16);
+
     telephoneOutput.innerText = telephoneInput.value;
     locationOutput.innerText = locationInput.value;
     githubOutput.innerText = githubInput.value;
@@ -44,8 +49,6 @@ const cvContent = () => {
     websiteOutput.innerText = websiteInput.value;
     overviewOutput.innerText = overviewInput.value;
     emailOutput.innerText = emailInput.value;
-
-
 
 }
 
@@ -68,12 +71,15 @@ const skillset = (skill) => {
     skillsLi.innerText = skill
     skillsUl.appendChild(skillsLi)
 }
-const addSkill = () => {
+const addSkill = (e) => {
+    e.preventDefault();
     skillset(skillInput.value)
 }
-addSkill()
 
-
+const cvReset = (e) => {
+    e.preventDefault();
+    location.reload();
+}
 
 nameInput.addEventListener('input', cvContent);
 professionInput.addEventListener('input', cvContent);
@@ -87,3 +93,4 @@ overviewInput.addEventListener('input', cvContent);
 
 printButton.addEventListener('click', printCv);
 skillBtn.addEventListener('click', addSkill)
+resetCv.addEventListener('click', cvReset)

@@ -201,22 +201,7 @@
             font-size: 0.9rem;
         }
 
-        @media print {
-
-            .section2 {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-            .section2-inner {
-                print-color-adjust: exact;
-                -webkit-print-color-adjust: exact;
-            }
-
-            body {
-                margin: 0.15rem;
-            }
-        }
-
+        
         .profile-pic {
             width: 80px;
             float: left;
@@ -246,7 +231,7 @@
             /* height: auto; */
             height: 731px;
         }
-
+        
         .contact-info {
             display: flex;
             justify-content: space-between;
@@ -255,17 +240,17 @@
             height: 240px;
             max-width: 320px;
         }
-
+        
         .email-icon {
             width: 20px;
         }
-
+        
         .dash {
             width: 4rem;
             background-color: white;
             height: 0.1rem;
         }
-
+        
         .cv-header {
             display: flex;
             justify-content: center;
@@ -273,14 +258,14 @@
             flex-direction: column;
             height: 125px;
         }
-
+        
         .profession {
             font-family: 'Monofett', cursive;
             letter-spacing: 0.2rem;
             font-weight: bold;
             font-size: 3rem;
         }
-
+        
         .skills {
             height: 400px;
             position: absolute;
@@ -293,24 +278,24 @@
         .interests {
             height: 130px;
         }
-
+        
         .education-title,
         .courses-title {
             margin-top: 1rem;
         }
-
+        
         input {
             border-radius: 3px;
             line-height: 1.5rem;
             padding: 0.2rem;
             font-family: inherit;
         }
-
+        
         textarea {
             border-radius: 3px;
             font-family: inherit;
         }
-
+        
         .reset {
             background-color: darkred;
             margin: 1rem;
@@ -318,7 +303,7 @@
             font-weight: bold;
             font-size: 1.1rem;
         }
-
+        
         #print-cv {
             background-color: green;
             color: #fff;
@@ -327,25 +312,45 @@
             display: block;
             font-size: 1.1rem;
         }
-
+        
         .website-output-label {
             margin-bottom: 1rem;
         }
-
+        
         #add-skill {
             font-weight: bold;
             font-size: 1.1rem;
             background-color: green;
             color: #fff;
         }
-
+        
         #reset-cv {
             font-weight: bold;
             font-size: 1.1rem;
             background-color: darkred;
             color: #fff;
         }
+        @media print {
+
+            .section1{
+                display:none;
+            }
+        
+            .section2 {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .section2-inner {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        
+            body {
+                margin: 0.15rem;
+            }
+        }
     </style>
+  
 </head>
 
 <body>

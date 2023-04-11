@@ -9,19 +9,12 @@
 @page {
     size: auto;
     margin: 0;
+    background-color: black;
+    
 
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* -webkit-print-color-adjust: exact !important; */
-    /* Chrome, Safari 6 – 15.3, Edge */
 
-    print-color-adjust: exact !important;
-    /* Firefox 97+, Safari 15.4+ */
-}
 
 
 
@@ -77,11 +70,10 @@ form label {
 }
 
 .section2-inner {
-    background-color: red;
     border: 1px solid gray;
     border-radius: 2px;
     padding: 0.5rem;
-    height: 1182px;
+    height: 1178px;
     background-color: #1f1f1f;
 
 
@@ -171,10 +163,7 @@ button {
     overflow: hidden;
 }
 
-.b,
-.d {
-    min-width: 400px;
-}
+
 
 ul li {
     margin: 0.5rem 1rem;
@@ -218,7 +207,7 @@ h3 {
 .d {
     /* max-height: 43.5rem; */
     /* height: auto; */
-    height: 794px;
+    height: 792px;
 }
 
 .contact-info {
@@ -227,7 +216,7 @@ h3 {
     flex-direction: column;
     position: relative;
     height: 240px;
-    max-width: 320px;
+    /* max-width: 320px; */
 }
 
 .email-icon {
@@ -332,16 +321,18 @@ textarea {
         height: 1056px;
     }
 
-    .section2 {
+    /* .section2 {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
-    }
+    } */
     .section2-inner {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
     body {
-        margin: 0.15rem;
+        margin-left: 0.09rem;
+        margin-top: 0.09rem;
     }
+    
 }

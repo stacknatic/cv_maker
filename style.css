@@ -28,6 +28,7 @@ header {
 body {
     margin: 1rem;
     font-family: sans-serif;
+    background-color: #f5f5f5;
 }
 
 main {
@@ -41,7 +42,7 @@ form fieldset {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 0.5rem;
+    padding: 1.5rem;
 }
 
 
@@ -57,6 +58,8 @@ form label {
 
 .section1 {
     flex-basis: 30%;
+    display: flex;
+    justify-content: center;
     border: 1px solid gray;
     border-radius: 2px;
     padding: 0.5rem;
@@ -151,7 +154,7 @@ button {
     padding: 0.5rem;
     overflow-wrap: break-word;
     box-shadow: 0px 2px 5px 0px;
-    /* border-radius: 4px; */
+    border-radius: 2px;
     overflow: hidden;
 }
 
@@ -310,23 +313,28 @@ textarea {
     background-color: darkred;
     color: #fff;
 }
-/* @media (max-width:883px){
+@media only screen and (max-width:1241px){
     .section1, .section2{
         flex-basis: 100%
     }
+    form, form input, textarea, .section1{
+        min-width: 275px;
+    }
+   
     .cv-container{
         display: flex;
         flex-wrap: wrap;
     }
     .cv-header{
-        margin: 1rem;
+        margin: 1rem auto;
+        min-width: 275px;
     }
     .column{
         width:100%;
         margin-top: 1rem;
     }
     
-} */
+}
 @media print {
 
     .section1, h1, #print-cv{

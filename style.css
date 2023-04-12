@@ -7,6 +7,7 @@
 }
 
 @page {
+    /* size: auto; */
     size: auto;
     margin: 0;
     
@@ -246,7 +247,8 @@ h3 {
 
 .skills {
     /* height: 455px; */
-    height: 394px;
+    /* height: 394px; */
+    height: 373px;
 }
 
 .career {
@@ -308,7 +310,7 @@ textarea {
     background-color: darkred;
     color: #fff;
 }
-@media (max-width:883px){
+/* @media (max-width:883px){
     .section1, .section2{
         flex-basis: 100%
     }
@@ -324,26 +326,27 @@ textarea {
         margin-top: 1rem;
     }
     
-}
+} */
 @media print {
 
     .section1, h1, #print-cv{
         display:none;
     }
-  
+
     /* .cv-container{
         width: 816px;
     } */
     .section2{
         position: absolute;
-        /* top: 0; */
+        top: 0;
         bottom: 0;
-        width: 100vw;
+        /* width: 100vw; */
         /* flex-basis: 100%;
         display: block;
         margin: auto; */
         /* height: 1056px; */
         /* width: 100%; */
+        size: A4;
     }
 
     /* .section2 {

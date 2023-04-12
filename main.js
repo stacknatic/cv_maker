@@ -53,16 +53,22 @@ const cvContent = () => {
 }
 
 
+// const printCv = () => {
+//     const cvTemplate = window.open('', '', width=500, height=500)
+//     cvTemplate.document.write('<head>')
+//     cvTemplate.document.write('<style>')
+//     cvTemplate.document.write(style.innerHTML)
+//     cvTemplate.document.write('</style>')
+//     cvTemplate.document.write('</head>')
+//     cvTemplate.document.write(cvWindow.innerHTML)
+//     cvTemplate.document.close()
+//     cvTemplate.print()
+    
+// }
+
 const printCv = () => {
-    const cvTemplate = window.open('', '', width=500, height=500)
-    cvTemplate.document.write('<head>')
-    cvTemplate.document.write('<style>')
-    cvTemplate.document.write(style.innerHTML)
-    cvTemplate.document.write('</style>')
-    cvTemplate.document.write('</head>')
-    cvTemplate.document.write(cvWindow.innerHTML)
-    cvTemplate.document.close()
-    cvTemplate.print()
+    
+    window.print()
     
 }
 

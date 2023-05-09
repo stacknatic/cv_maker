@@ -7,20 +7,12 @@
 }
 
 @page {
-    /* size: auto; */
     size: auto;
     margin: 0;
-    
-
 }
-
-
-
-
 
 header {
     background-color: #1f1f1f;
-    /* position: sticky; */
     top: 0;
 
 }
@@ -53,7 +45,6 @@ form label {
 
 .overview-input {
     display: block;
-
 }
 
 .section1 {
@@ -65,8 +56,6 @@ form label {
     padding: 0.5rem;
     background: #1f1f1f;
     color: #fff;
-
-
 }
 
 .section2 {
@@ -74,13 +63,8 @@ form label {
 }
 
 .section2-inner {
-    /* border: 1px solid gray; */
-    /* border-radius: 2px; */
     padding: 1rem;
-    /* height: 1178px; */
     background-color: #1f1f1f;
-
-
 }
 
 
@@ -91,7 +75,6 @@ h2 {
 }
 
 .cv-container {
-    /* position: relative; */
     display: grid;
     grid-template-areas:
         'b b a'
@@ -131,11 +114,6 @@ h2 {
     grid-area: f;
 }
 
-/* .column {
-    box-shadow: 0px 2px 5px 0px;
-    border-radius: 4px;
-} */
-
 .print {
     margin: 1rem 0;
 }
@@ -149,7 +127,6 @@ button {
     font-size: small;
     word-wrap: break-word;
     line-height: 1.5rem;
-    /* border: 1px solid #f7f5f5; */
     background-color: #f7f5f5;
     padding: 0.5rem;
     overflow-wrap: break-word;
@@ -163,7 +140,6 @@ button {
 .e,
 .f {
     min-width: 320px;
-    /* max-width: calc(100vw - 250px); */
     overflow: hidden;
 }
 
@@ -200,18 +176,7 @@ h3 {
 }
 
 .b {
-    /* min-height: 15.6rem;
-    max-height: 15.6rem; */
-    /* height: 15.6rem; */
     height: 240px;
-    /* height: auto; */
-
-}
-
-.d {
-    /* max-height: 43.5rem; */
-    /* height: auto; */
-    /* height: 792px; */
 }
 
 .contact-info {
@@ -220,7 +185,6 @@ h3 {
     flex-direction: column;
     position: relative;
     height: 240px;
-    /* max-width: 320px; */
 }
 
 .email-icon {
@@ -249,8 +213,6 @@ h3 {
 }
 
 .skills {
-    /* height: 455px; */
-    /* height: 394px; */
     height: 373px;
 }
 
@@ -300,7 +262,7 @@ textarea {
     margin-bottom: 1rem;
 }
 
-#add-skill {
+#add-skill, #add-objectives, #add-interests {
     font-weight: bold;
     font-size: 1.1rem;
     background-color: green;
@@ -341,34 +303,19 @@ textarea {
         display:none;
     }
 
-    /* .cv-container{
-        width: 816px;
-    } */
     .section2{
         position: absolute;
         top: 0;
         bottom: 0;
-        /* width: 100vw; */
-        /* flex-basis: 100%;
-        display: block;
-        margin: auto; */
-        /* height: 1056px; */
-        /* width: 100%; */
-        size: A4;
     }
 
-    /* .section2 {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    } */
     .section2 {
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
     body {
-        margin-left: 0;
-        /* margin-top: 0.09rem; */
+        margin: auto;
     }
     
 }

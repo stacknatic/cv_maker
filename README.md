@@ -1,3 +1,5 @@
 # CV Maker
 
-- Create a CV and print or save your CV as PDF
+- Create a CV with a ready made template and print it out or save it as PDF.
+
+- To add a photo to the CV, copy the photo to the root folder (CVMAKER) and then click the Browse botton to display it in the CV.

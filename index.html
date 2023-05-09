@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="style.css">
   
   
@@ -42,9 +41,21 @@
 
                     <label for="overview">Overview</label>
                     <textarea name="overview" id="overview" cols="30" rows="10" maxlength="356"></textarea>
+                    <label for="experience">Experience</label>
+                    <textarea name="experience" id="experience" cols="30" rows="10"></textarea>
+                    <label for="education">Education</label>
+                    <textarea name="education" id="education" cols="30" rows="10" maxlength="356"></textarea>
+                    <label for="courses">Certificates</label>
+                    <textarea name="courses" id="courses" cols="30" rows="10" maxlength="356"></textarea>
                     <label for="skill">Skill</label>
                     <input type="text" id="skill">
                     <button id="add-skill">Add skill</button>
+                    <label for="objectives">Career Objectives</label>
+                    <input type="text" id="objectives">
+                    <button id="add-objectives">Add Objective</button>
+                    <label for="interests">Interests</label>
+                    <input type="text" id="interests">
+                    <button id="add-interests">Add interest</button>
                     <button class="reset" type="reset">Reset form</button>
                     <button id="reset-cv">Clear CV</button>
 
@@ -73,11 +84,11 @@
                         <p><img class="icon email-icon" src="/icons/email.svg" alt="email"> Email: <span
                                 class="email-output"></span></p>
                         <p><img class="icon location-icon" src="/icons/location.svg" alt="phone icon"> Location: <span
-                                class="location-output">Oz</span></p>
+                                class="location-output"></span></p>
                         <p class="website-output-label"><img class="icon url-icon" src="/icons/url.svg" alt="url icon">
                             Website: <span class="website-output"></span></p>
                         <p> GitHub: <span class="github-output"></span></p>
-                        <p>LinkedIn: <span class="linkedin-output">https://linkedin.com/michaelakerele/</span></p>
+                        <p>LinkedIn: <span class="linkedin-output"></span></p>
 
 
                     </div>
@@ -85,16 +96,13 @@
                         <h3 class="overview-title">
                             <p><img class="icon overview-icon" src="/icons/magnifiying.svg" alt="CV overview"> OVERVIEW
                         </h3>
-                        <img class="profile-pic" src="Michael.jpg" alt="profile pic">
+                        <img class="profile-pic" src="" alt="">
                         <p class="overview-text">
                         </p>
                     </div>
-                    <!-- <div class="b column profile">b</div> -->
                     <div class="c column skills">
                         <h3>SKILLS</h3>
                         <ul class="skills-ul">
-
-
                         </ul>
                     </div>
                     <div class="d column experience">
@@ -112,7 +120,7 @@
                             soluta!
 
                         </ul>
-                        <h3 class="courses-title">COURSES</h3>
+                        <h3 class="courses-title">CERTIFICATES</h3>
                         <ul class="courses-ul">
 
                         </ul>
@@ -120,21 +128,16 @@
 
                     <div class="e column career">
                         <h3 class="career-title">CAREER OBJECTIVES</h3>
-                        <ul class="career-ul">
+                        <ul class="objectives-ul">
                         </ul>
                     </div>
 
                     <div class="f column interests">
                         <h3>INTERESTS</h3>
+                        <ul class="interests-ul">
+                        </ul>
                     </div>
-
-
-
-
-
-
                 </div>
-
             </div>
         </section>
     </main>

@@ -9,7 +9,19 @@ const githubInput = document.querySelector('#github')
 const linkedinInput = document.querySelector('#linkedin');
 const websiteInput = document.querySelector('#website');
 const overviewInput = document.querySelector('#overview')
+const experienceInput = document.querySelector('#experience')
+const educationInput = document.querySelector('#education')
+const coursesInput = document.querySelector('#courses')
 const skillInput = document.querySelector('#skill')
+
+const objectivesInput = document.querySelector('#objectives')
+
+const interestsInput = document.querySelector("#interests")
+
+const photoInput = document.querySelector('#photo')
+
+const profilePic = document.querySelector('.profile-pic')
+
 
 //output
 const nameOutput = document.querySelector('.fullname-output');
@@ -21,9 +33,15 @@ const githubOutput = document.querySelector('.github-output');
 const linkedinOutput = document.querySelector('.linkedin-output');
 const websiteOutput = document.querySelector('.website-output');
 const overviewOutput = document.querySelector('.overview-text');
+const experienceOutput = document.querySelector('.experience-text');
+const educationOutput = document.querySelector('.education-ul');
+const coursesOutput = document.querySelector('.courses-ul');
 
 // button 
 const skillBtn = document.querySelector('#add-skill')
+const objectiveBtn = document.querySelector('#add-objectives')
+const interestBtn = document.querySelector('#add-interests')
+
 const resetCv = document.querySelector('#reset-cv')
 
 
@@ -32,6 +50,14 @@ const printButton = document.querySelector('#print-cv')
 const style = document.querySelector('style')
 
 const skillsUl = document.querySelector('.skills-ul')
+
+const objectivessUl = document.querySelector('.objectives-ul')
+
+const interestsUl = document.querySelector('.interests-ul')
+
+
+
+
 
 const cvContent = () => {
     nameOutput.innerText = nameInput.value;
@@ -49,6 +75,9 @@ const cvContent = () => {
     websiteOutput.innerText = websiteInput.value;
     overviewOutput.innerText = overviewInput.value;
     emailOutput.innerText = emailInput.value;
+    experienceOutput.innerText = experienceInput.value;
+    educationOutput.innerText = educationInput.value;
+    coursesOutput.innerText = coursesInput.value;
 
 }
 
@@ -77,14 +106,41 @@ const skillset = (skill) => {
     skillsLi.innerText = skill
     skillsUl.appendChild(skillsLi)
 }
+const objectiveset = (objective) => {
+    const objectivesLi = document.createElement('li')
+    objectivesLi.innerText = objective
+    objectivessUl.appendChild(objectivesLi)
+}
+const interestset = (interest) => {
+    const interestLi = document.createElement('li')
+    interestLi.innerText = interest
+    interestsUl.appendChild(interestLi)
+}
 const addSkill = (e) => {
     e.preventDefault();
     skillset(skillInput.value)
 }
 
+const addObjective = (e) => {
+    e.preventDefault();
+    objectiveset(objectivesInput.value)
+}
+
+const addInterest = (e) => {
+    e.preventDefault();
+    interestset(interestsInput.value)
+}
+
 const cvReset = (e) => {
     e.preventDefault();
     location.reload();
+}
+
+function addPhoto (){
+    const path = this.value
+    const picname = path.replace(/^C:\\fakepath\\/, "")
+    profilePic.src = picname
+    console.log('path is ' + picname)
 }
 
 nameInput.addEventListener('input', cvContent);
@@ -97,6 +153,16 @@ linkedinInput.addEventListener('input', cvContent);
 websiteInput.addEventListener('input', cvContent);
 overviewInput.addEventListener('input', cvContent);
 
+experienceInput.addEventListener('input', cvContent);
+educationInput.addEventListener('input', cvContent);
+coursesInput.addEventListener('input', cvContent);
+
+
 printButton.addEventListener('click', printCv);
 skillBtn.addEventListener('click', addSkill)
+objectiveBtn.addEventListener('click', addObjective)
+interestBtn.addEventListener('click', addInterest)
+
 resetCv.addEventListener('click', cvReset)
+
+photoInput.addEventListener('change', addPhoto)
